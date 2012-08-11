@@ -1,1 +1,4 @@
-Startup weekend project for an art marketplace
+myowngallery
+============
+
+Startup Weekend Project to make an art marketplace
