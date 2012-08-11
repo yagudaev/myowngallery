@@ -1,14 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
 
-def goodbye(request):
+def index(request):
     
-    return render_to_response("temp.html", 
-                              {'var1': "Hello, fine world"})
-
-def hello(request):
-    
-    return HttpResponse("Hello World")
-
-
-
+    return render_to_response("index.html", {'var1': "Hello, fine world"})
