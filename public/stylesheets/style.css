@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+nav ul {
+	display: ininle;
+	text-decoration: none;
+}
+
+nav li {
+	display: block;
+	float: left;
+	margin-left: 10px;
+}
+
+nav li:first-child {
+    margin-left: 0;
+}

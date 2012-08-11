@@ -3,12 +3,19 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes')
-  , http = require('http')
-  , path = require('path');
+var express = require('express'),
+    routes = require('./routes'),
+    http = require('http'),
+    path = require('path'),
+    MongoStore = require('connect-mongo')(express)
+    _ = require('underscore'),
+    config = require('./config.js'),
+    db = require('./models/db');
 
 var app = express();
+
+// connect to the database
+
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -19,7 +26,18 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(express.cookieParser('your secret here'));
-  app.use(express.session());
+  app.use(express.session({
+        secret: 'alfjsdlkjbzaw2',
+        maxAge: new Date(Date.now() + 1000 * 60 * 60 * 24 * 90), // valid for 90 days
+        store: new MongoStore({
+            db: config.dbname,
+            host: config.dbhost,
+            port: parseInt(config.dbport, 10),
+            username: config.dbuser,
+            password: config.dbpassword,
+            collection: 'sessions'
+        }) 
+      }));
   app.use(app.router);
   app.use(express.static(path.join(__dirname, 'public')));
 });
