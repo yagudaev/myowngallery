@@ -1,0 +1,16 @@
+<%- include header %>
+<% if (errors.length > 0) { %>
+<p><%= errors %></p>
+<% } else { %>
+	<p>Thank you for signing up, you are awesome :).</p>
+<% } %>
+<form method="post" action="/signup">
+	<label for="txtFirstName">First name:</label><input id="txtFirstName" name="txtFirstName" type="text" />
+	<label for="txtLastName">Last name:</label><input id="txtLastName" name="txtLastName" type="text" />
+	<label for="txtEmail">Email:</label><input id="txtEmail" name="txtEmail" type="text" />
+	<label for="txtPhone">Phone:</label><input id="txtPhone" name="txtPhone" type="text" />
+	<label for="txtBiography">Biography</label><textarea></textarea>
+	<img width="50" height="50" />
+	<button type="submit">Signup</button>
+</form>
+<%- include footer %>

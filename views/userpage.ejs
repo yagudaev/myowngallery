@@ -1,0 +1,14 @@
+<%- include header %>
+<% if (errors.length > 0) { %>
+<p><%= errors %></p>
+<% } else { %>
+	<p>You are Logged in</p>
+<% } %>
+
+<div>
+<li>UserName: <%= userName %></li>
+<li>First Name: <%= firstName %></li>
+<li>Last Name: <%= lastName %></li>
+</div>
+
+<%- include footer %>
