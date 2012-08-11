@@ -47,6 +47,8 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
+app.get('/signup', routes.showSignup);
+app.post('/signup', routes.processSignup);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

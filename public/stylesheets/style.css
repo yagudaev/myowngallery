@@ -21,3 +21,19 @@ nav li {
 nav li:first-child {
     margin-left: 0;
 }
+
+form label {
+    display: block;
+    clear: both;
+}
+form input{
+    display: block;
+}
+
+form img {
+    display: block;
+}
+
+header {
+    margin: 50px;
+}

@@ -15,8 +15,6 @@ var mongoose = require('mongoose'),
  * @param port Number [optional] The database port number e.g. 1234
  */
 function connectTo(host, database, username, password, port) {
-    // TODO: check if connection has failed
-    //only create a new DB if it doesn't exist
     username = username || '';
     password = password || '';
     port = port ? ':' + port : '';
@@ -50,8 +48,8 @@ function buildDB() {
             last  : { type: String, required: true }
         },
         email : { type: String, required: true },
-        location : { type: String, 'default': '' },
-        website : { type: String, 'default': '' },
+        phone: {type: String, require: true },
+        biography: {type: String, require: true},
         timeCreated : { type: Date, 'default': Date.now },
         timeLastLogin : { type: Date },
     });
@@ -89,4 +87,5 @@ function buildDB() {
     return db;
 }
 
-module.exports.connectTo = connectTo;
+exports.models = connectTo(config.dbhost, config.dbname, config.dbuser, config.dbpassword, config.dbport).models;
+console.log(exports.models);
