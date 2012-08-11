@@ -11,5 +11,9 @@ def goodbye(request):
                               {'var1': "Hello, fine world"})
 
 def hello(request):
-    return HttpResponse(myowngallery.settings.SITE_ROOT)
+    
+    loc = os.listdir(os.path.join(myowngallery.settings.SITE_ROOT, 'templates'))
+    
+    
+    return HttpResponse(str(loc))
     return HttpResponse("Hello World")
