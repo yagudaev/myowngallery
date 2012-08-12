@@ -10,7 +10,7 @@ exports.index = function(req, res){
 };
 
 exports.showSignup = function(req, res) {
-	res.render('signup', {title: 'Signup', errors: [] });
+    res.render('signup', {title: 'Signup', errors: [] });
 };
 
 exports.processSignup = function(req, res) {
@@ -23,7 +23,7 @@ exports.processSignup = function(req, res) {
 		},
 		email: req.body.txtEmail,
 		phone: req.body.txtPhone,
-		biography: req.body.biography 
+		biography: req.body.txtBiography 
 	});
 
 	user.save(function(err, user) {
@@ -32,7 +32,11 @@ exports.processSignup = function(req, res) {
 			errors.push(err);
 		}
 
-		res.render('signup', {title: 'Signup Successful', errors: errors });
+		res.render('userpage', {title: 'Signup Successful', errors: errors,
+				       userName: user.username,
+					firstName: user.name.first,
+					lastName: user.name.last,
+					biography: user.biography});
 	});
 	
 };
@@ -60,7 +64,8 @@ exports.userPage = function(req, res) {
 					       res.render('userpage', {title: 'Title', errors: [],
 								      userName: user.username,
 								      firstName: user.name.first,
-								      lastName: user.name.last});
+								      lastName: user.name.last,
+								      biography: user.biography});
 					       return;
 					   } else {
 					       res.render('login', {title: 'Title', errors: ['Username/Password invalid']});
