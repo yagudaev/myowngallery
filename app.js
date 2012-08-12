@@ -7,7 +7,7 @@ var express = require('express'),
     routes = require('./routes'),
     http = require('http'),
     path = require('path'),
-    MongoStore = require('connect-mongo')(express)
+    MongoStore = require('connect-mongo')(express),
     _ = require('underscore'),
     config = require('./config.js'),
     db = require('./models/db');
@@ -48,6 +48,7 @@ app.get('/signup', routes.showSignup);
 app.post('/signup', routes.processSignup);
 app.get('/login', routes.login);
 app.post('/userpage', routes.userPage);
+app.get('/buyer', routes.buyer);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

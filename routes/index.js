@@ -49,6 +49,10 @@ exports.login = function(req, res) {
   res.render('login', {title: 'Login', errors: []});  
 };
 
+exports.buyer = function(req, res) {
+    res.render('buyer', {title: 'Buy Art', errors: [], scripts: ['javascripts/buyer.js']});
+};
+
 exports.userPage = function(req, res) {
     
     var reqUserName = req.body.txtUserName;

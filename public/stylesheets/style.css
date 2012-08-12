@@ -121,7 +121,7 @@ nav li a:hover {
     padding-top: 15px;
     padding-right: 20px;
     padding-bottom: 13px;
-    color: 	white;
+    /*color: 	white;*/
     line-height: 30px;
     box-shadow: inset 0 0 16px #000000;
 }
@@ -294,3 +294,10 @@ nav a {
     border-radius: 10px;
 }
 
+#buyercontent
+{
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+    horizontal-align: center;
+}
