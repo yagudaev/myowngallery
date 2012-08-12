@@ -8,7 +8,7 @@ a {
 }
 
 nav ul {
-    display: inline;
+    display: block;
     text-decoration: none;
 }
 
@@ -35,11 +35,12 @@ form img {
 }
 
 header {
-    margin: 50px;
+    margin-bottom: 20px;
+    overflow: auto;
 }
 
 body {
-    background-image: url("images/bg.jpg");
+    background-image: url("/images/bg.jpg");
     margin: 0;
     padding: 0;
 }
@@ -73,8 +74,7 @@ body {
 #container {
     width: 1000px;
     margin: auto;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+
 }
 
 #logo {
@@ -86,19 +86,23 @@ body {
 
 nav {
     width: 620px;
-    height: 65px;
     margin-left: 40px;
     margin-top: 10px;
-    float: left;
-    background-image: url("images/navback.png");
+    float: right;
+    background-image: url("/images/navback.png");
     background-repeat: no-repeat;
+    height: 65px;
 }
 
 #navlist {
-    padding: 0px;
-    margin: 0px;
-    margin-left: 18px;
-    line-height: 60px;
+    padding: 0;
+    line-height: 44px;
+    margin: 8px 30px 8px 30px;
+    overflow: auto;
+}
+
+#navlist li {
+    margin: 0;
 }
 
 nav li {
@@ -108,32 +112,27 @@ nav li {
     font-family: 'OpenSansCondensedBold', arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
-    line-height: 60px;
-    margin-left: 8px;
-    padding-left: 20px;
-    padding-top: 18px;
-    padding-right: 20px;
-    padding-bottom: 14px;
+    vertical-align: middle;
+}
+
+nav li a {
+    display: block;
+    padding: 0 20px;
 }
 
 nav li a:hover {
-    padding-left: 20px;
-    padding-top: 15px;
-    padding-right: 20px;
-    padding-bottom: 13px;
-    /*color: 	white;*/
-    line-height: 30px;
+    color: 	white;
     box-shadow: inset 0 0 16px #000000;
 }
 
 nav a {
     text-decoration: none;
-    color: #444444;
+    color: #AAA;
 }
 
 
-#divider {
-    background-image: url("images/horizontaldivider.png");
+.divider {
+    background-image: url("/images/horizontaldivider.png");
     background-repeat: no-repeat;
     width: 740px;
     height: 15px;
@@ -144,18 +143,16 @@ nav a {
 }
 
 #dividertwo {
-    background-image: url("images/horizontaldivider.png");
+    background-image: url("/images/horizontaldivider.png");
     background-repeat: no-repeat;
     width: 740px;
     height: 15px;
-    margin-left: 280px;
-    margin-top: 20px;
-    float: left;
-    clear: both;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#vertdivider {
-    background-image: url("images/verticaldivider.png");
+.vertdivider {
+    background-image: url("/images/verticaldivider.png");
     background-repeat: no-repeat;
     width: 11px;
     height: 400px;
@@ -172,11 +169,12 @@ nav a {
 }
 
 #maincontent {
-    width: 447px;
-    height: 300px;
+    width: 95%;
 
-    margin-left: 20px;
+    margin-left: auto;
     margin-top: 20px;
+    margin-right: auto;
+    margin-bottom: 40px;
 }
 
 #maincontent p {
@@ -195,14 +193,14 @@ nav a {
     float: left;
     margin-top: 0px;
     clear: both;
-    margin-left: 200px;
+    margin-left: 20px;
 }
 
 #subtwo {
     width: 300px;
     height: 400px;
     float: left;
-    margin-top: 0px;
+    margin-top: 0;
     margin-left: 20px;
 }
 
@@ -219,13 +217,11 @@ nav a {
     float: left;
 }
 
-#footer {
-
-    background-image: url("images/footerback.png");
+footer {
+    background-image: url("/images/footerback.png");
     background-repeat: repeat-x;
     width: 100%;
     height: 200px;
-    float: left;
     clear: both;
 }
 
@@ -294,10 +290,26 @@ nav a {
     border-radius: 10px;
 }
 
-#buyercontent
-{
-    margin-top: 100px;
-    text-align: center;
-    width: 100%;
-    horizontal-align: center;
+#quick-login {
+    float: right;
+    clear: right;
+    width: 450px;
+    margin-top: 20px;
+}
+
+#quick-login label,
+#quick-login input,
+#quick-login button {
+    display: block;
+    float: left;
+    clear: none;
+}
+
+#quick-login input + label {
+    clear: none;
+    margin-left: 15px;
+}
+
+#quick-login button {
+    margin-left: 10px;
 }
