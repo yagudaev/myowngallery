@@ -294,10 +294,13 @@ nav a {
     border-radius: 10px;
 }
 
-#buyercontent
+.pagecontent
 {
     margin-top: 100px;
     text-align: center;
     width: 100%;
-    horizontal-align: center;
+    horizontal-align: center;margin-top: 100px;
 }
+
+
+

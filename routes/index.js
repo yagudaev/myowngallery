@@ -10,7 +10,7 @@ exports.index = function(req, res){
 };
 
 exports.showSignup = function(req, res) {
-	res.render('signup', {title: 'Signup - Artisense', errors: [], scripts: ['javascripts/signup.js'] })
+	res.render('signup', {title: 'Signup - Artisense', errors: [], scripts: ['javascripts/signup.js'] });
 };
 
 exports.processSignup = function(req, res) {
@@ -51,6 +51,14 @@ exports.login = function(req, res) {
 
 exports.buyer = function(req, res) {
     res.render('buyer', {title: 'Buy Art', errors: [], scripts: ['javascripts/buyer.js']});
+};
+
+exports.about = function(req, res) {
+  res.render('about', {title: 'About Us', errors: [], scripts: []});  
+};
+
+exports.contact = function(req, res) {
+  res.render('contact', {title: 'About Us', errors: [], scripts: []});  
 };
 
 exports.userPage = function(req, res) {
