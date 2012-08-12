@@ -313,3 +313,11 @@ footer {
 #quick-login button {
     margin-left: 10px;
 }
+
+
+.pagecontent
+{
+    margin-top: 100px;
+    text-align: center;
+    width: 100%;
+}
