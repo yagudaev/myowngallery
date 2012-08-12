@@ -1,0 +1,8 @@
+<%- include header %>
+<h2>Featured Artwork</h2>
+
+
+
+<a href="tastetest">Take the art taste test to find art that you like</a>
+
+<%- include footer %>
