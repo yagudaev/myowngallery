@@ -6,12 +6,12 @@ var db = require('./../models/db');
 
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Home', scripts: []});
+  res.render('index', { title: 'Artisense - Buy, Sell and Enjoy Art from Around The World', scripts: []});
 };
 
 exports.showSignup = function(req, res) {
-	res.render('signup', {title: 'Signup', errors: [], scripts: ['javascripts/signup.js'] })
-}
+	res.render('signup', {title: 'Signup - Artisense', errors: [], scripts: ['javascripts/signup.js'] })
+};
 
 exports.processSignup = function(req, res) {
 	var user = new db.models.User({
@@ -30,14 +30,16 @@ exports.processSignup = function(req, res) {
 		var errors = [];
 		if (err) {
 			errors.push(err);
-		}
+            res.render('signup', { title: "Signup Error", errors: errors, scripts: ['javascripts/signup.js'] });
+		} else {
+            res.render('userpage', {title: 'Signup Successful', errors: errors,
+                userName: user.username,
+                firstName: user.name.first,
+                lastName: user.name.last,
+                biography: user.biography,
+                scripts: ['javascripts/signup.js'] });
 
-		res.render('userpage', {title: 'Signup Successful', errors: errors,
-				       userName: user.username,
-					firstName: user.name.first,
-					lastName: user.name.last,
-					biography: user.biography,
-					scripts: ['javascripts/signup.js'] });
+        }
 	});
 	
 };
@@ -62,15 +64,13 @@ exports.userPage = function(req, res) {
 					   }
 
 					   if(user) {
-					       res.render('userpage', {title: 'Title', errors: [],
+					       res.render('userpage', {title: 'Profile - Artisense', errors: [],
 								      userName: user.username,
 								      firstName: user.name.first,
 								      lastName: user.name.last,
 								      biography: user.biography});
-					       return;
 					   } else {
-					       res.render('login', {title: 'Title', errors: ['Username/Password invalid']});
-					       return;
+					       res.render('login', {title: 'Login - Artisense', errors: ['Username/Password invalid']});
 					   }
 				});
 };

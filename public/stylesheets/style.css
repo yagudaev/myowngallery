@@ -1,21 +1,21 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }
 
 nav ul {
-	display: ininle;
-	text-decoration: none;
+    display: inline;
+    text-decoration: none;
 }
 
 nav li {
-	display: block;
-	float: left;
-	margin-left: 10px;
+    display: block;
+    float: left;
+    margin-left: 10px;
 }
 
 nav li:first-child {
@@ -37,3 +37,260 @@ form img {
 header {
     margin: 50px;
 }
+
+body {
+    background-image: url("images/bg.jpg");
+    margin: 0;
+    padding: 0;
+}
+
+/* Font Face Types installed */
+
+@font-face {
+    font-family: 'OpenSansCondensedBold';
+    src: url('fonts/OpenSans-CondBold-webfont.eot');
+    src: url('fonts/OpenSans-CondBold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/OpenSans-CondBold-webfont.woff') format('woff'),
+    url('fonts/OpenSans-CondBold-webfont.ttf') format('truetype'),
+    url('fonts/OpenSans-CondBold-webfont.svg#OpenSansCondensedBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DroidSansRegular';
+    src: url('DroidSans-webfont.eot');
+    src: url('DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+    url('DroidSans-webfont.woff') format('woff'),
+    url('DroidSans-webfont.ttf') format('truetype'),
+    url('DroidSans-webfont.svg#DroidSansRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* End Font Face */
+
+#container {
+    width: 1000px;
+    margin: auto;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+#logo {
+    width: 260px;
+    height: 100px;
+    float: left;
+    margin-top: 17px;
+}
+
+nav {
+    width: 620px;
+    height: 65px;
+    margin-left: 40px;
+    margin-top: 10px;
+    float: left;
+    background-image: url("images/navback.png");
+    background-repeat: no-repeat;
+}
+
+#navlist {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 18px;
+    line-height: 60px;
+}
+
+nav li {
+    color: #888888;
+    display: inline;
+    list-style-type: none;
+    font-family: 'OpenSansCondensedBold', arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 60px;
+    margin-left: 8px;
+    padding-left: 20px;
+    padding-top: 18px;
+    padding-right: 20px;
+    padding-bottom: 14px;
+}
+
+nav li a:hover {
+    padding-left: 20px;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-bottom: 13px;
+    color: 	white;
+    line-height: 30px;
+    box-shadow: inset 0 0 16px #000000;
+}
+
+nav a {
+    text-decoration: none;
+    color: #444444;
+}
+
+
+#divider {
+    background-image: url("images/horizontaldivider.png");
+    background-repeat: no-repeat;
+    width: 740px;
+    height: 15px;
+    margin-left: 100px;
+    margin-top: 20px;
+    float: left;
+    clear: both;
+}
+
+#dividertwo {
+    background-image: url("images/horizontaldivider.png");
+    background-repeat: no-repeat;
+    width: 740px;
+    height: 15px;
+    margin-left: 280px;
+    margin-top: 20px;
+    float: left;
+    clear: both;
+}
+
+#vertdivider {
+    background-image: url("images/verticaldivider.png");
+    background-repeat: no-repeat;
+    width: 11px;
+    height: 400px;
+    float: left;
+}
+
+
+#videocontainer {
+    width: 533px;
+    height: 300px;
+    clear: both;
+    margin-left: 170px;
+    margin-top: 20px;
+}
+
+#maincontent {
+    width: 447px;
+    height: 300px;
+
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#maincontent p {
+    font-family: arial, sans-serif;
+    font-size: 14px;
+}
+
+.infotext {
+    font-family: arial, sans-serif;
+    font-size: 14px;
+}
+
+#subone {
+    width: 300px;
+    height: 400px;
+    float: left;
+    margin-top: 0px;
+    clear: both;
+    margin-left: 200px;
+}
+
+#subtwo {
+    width: 300px;
+    height: 400px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+#subthree {
+    width: 298px;
+    height: 400px;
+    float: left;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+
+.thumbnail {
+    margin-right: 15px;
+    float: left;
+}
+
+#footer {
+
+    background-image: url("images/footerback.png");
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 200px;
+    float: left;
+    clear: both;
+}
+
+.headlines {
+    font-family: 'DroidSansRegular', helvetica, arial, sans-serif;
+    font-size: 36px;
+    text-align: left;
+    color: #444;
+}
+
+.subheading {
+    font-family: 'DroidSansRegular', helvetica, arial, sans-serif;
+    font-size: 24px;
+    text-align: left;
+    color: #444;
+}
+
+#login {
+    float: left;
+    clear: right;
+    margin-top: 20px;
+    margin-left: 250px;
+}
+
+.signin {
+    font-family: 'DroidSansRegular', arial, sans-serif;
+    font-size: 10px;
+}
+
+#email {
+    font-style: italic;
+    height: 25px;
+    width: 150px;
+    color: #fefefe;
+    background-color: #666666;
+    border: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+#password {
+    font-style: italic;
+    height: 25px;
+    width: 150px;
+    color: #fefefe;
+    background-color: #666666;
+    border: none;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+}
+
+#loginbutton {
+    color: white;
+    height: 25px;
+    width: 50px;
+    border: none;
+    background-color: black;
+    font-family: 'OpenSansCondensedBold', arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+

@@ -5,24 +5,22 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+        <div id="container">
 		<header>
-			<a href="/" >
-				<img src="images/logo.png" title="MyOwnGallery" alt="MyOwnGallery">
+			<a href="/">
+				<img id="logo" src="images/logo.png" title="MyOwnGallery" alt="MyOwnGallery">
 			</a>
-			<nav>
-			</nav>
+            <form id="quick-login">
+                <label for="txtEmailQuickLogin">Email:</label><input id="txtEmailQuickLogin" class="email" type="email"/>
+                <label for="txtPasswordQuickLogin">Password:</label><input id="txtPasswordQuickLogin" class="password" type="password"/>
+            </form>
 			<nav id="main-nav">
-				<ul>
-					<li>Home</li>
-					<li>Gallery</li>
-					<li>Make Money</li>
-					<li>Events</li>
-					<li>Contact</li>
-				</ul>
+                <ul id="navlist">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Buy Art</a></li>
+                    <li><a href="">Make Money</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Contact Us</a></li>
+                </ul>
 			</nav>
 		</header>
-
-		<footer>
-		</footer>
-  </body>
-</html>
