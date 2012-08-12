@@ -6,11 +6,11 @@ var db = require('./../models/db');
 
 
 exports.index = function(req, res){
-  res.render('index', { title: 'Home'});
+  res.render('index', { title: 'Home', scripts: []});
 };
 
 exports.showSignup = function(req, res) {
-	res.render('signup', {title: 'Signup', errors: [] })
+	res.render('signup', {title: 'Signup', errors: [], scripts: ['javascripts/signup.js'] })
 }
 
 exports.processSignup = function(req, res) {
@@ -32,7 +32,6 @@ exports.processSignup = function(req, res) {
 			errors.push(err);
 		}
 
-		res.render('signup', {title: 'Signup Successful', errors: errors });
-	})
-	
-}
+		res.render('signup', { title: 'Signup Successful', errors: errors, scripts: ['javascripts/signup.js'] });
+	});	
+};

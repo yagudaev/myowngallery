@@ -88,4 +88,3 @@ function buildDB() {
 }
 
 exports.models = connectTo(config.dbhost, config.dbname, config.dbuser, config.dbpassword, config.dbport).models;
-console.log(exports.models);

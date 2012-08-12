@@ -14,9 +14,6 @@ var express = require('express'),
 
 var app = express();
 
-// connect to the database
-
-
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
