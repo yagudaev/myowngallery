@@ -7,4 +7,9 @@ data/db/*
 
 !.gitkeep
 
+# dumbass temporary files
 .DS_Store
+~$
+^#
+^.#
+#$
