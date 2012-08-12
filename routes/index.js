@@ -23,7 +23,7 @@ exports.processSignup = function(req, res) {
 		},
 		email: req.body.txtEmail,
 		phone: req.body.txtPhone,
-		biography: req.body.biography 
+		biography: req.body.txtBiography 
 	});
 
 	user.save(function(err, user) {
@@ -32,6 +32,45 @@ exports.processSignup = function(req, res) {
 			errors.push(err);
 		}
 
-		res.render('signup', { title: 'Signup Successful', errors: errors, scripts: ['javascripts/signup.js'] });
-	});	
+		res.render('userpage', {title: 'Signup Successful', errors: errors,
+				       userName: user.username,
+					firstName: user.name.first,
+					lastName: user.name.last,
+					biography: user.biography,
+					scripts: ['javascripts/signup.js'] });
+	});
+	
+};
+
+exports.login = function(req, res) {
+    
+  res.render('login', {title: 'Login', errors: []});  
+};
+
+exports.userPage = function(req, res) {
+    
+    var reqUserName = req.body.txtUserName;
+    var reqPassword = req.body.txtPassword;
+
+    db.models.User.findOne({username: reqUserName,
+			   password: reqPassword}, function(err, user){ 
+					   
+					   if(err) {
+					       console.log(err);
+					       res.send(500, "error");					       
+					       return;
+					   }
+
+					   if(user) {
+					       res.render('userpage', {title: 'Title', errors: [],
+								      userName: user.username,
+								      firstName: user.name.first,
+								      lastName: user.name.last,
+								      biography: user.biography});
+					       return;
+					   } else {
+					       res.render('login', {title: 'Title', errors: ['Username/Password invalid']});
+					       return;
+					   }
+				});
 };

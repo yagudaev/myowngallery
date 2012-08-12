@@ -1,0 +1,51 @@
+<%- include header %>
+<% if (errors.length > 0) { %>
+<p><%= errors %></p>
+<% } else { %>
+	<p>You are Logged in</p>
+<% } %>
+
+<h1><%= firstName %> <%= lastName %></h1>
+
+<h3>Biography</h3>
+<div id="userBio">
+  <%= biography %>
+</div>
+
+<div>
+
+<form>
+
+<div>
+<label for="txtWhatAdd">Username:</label>
+<select id="whatAdd" type="select">
+  <option name="Photo">Photo</option>
+</select>
+</div>
+
+<div>
+  <label for="txtPhotoName">Name:</label><input id="txtPhotoName" name="txtPhotoName" type="text" />
+</div>
+
+<div>
+  <label for="txtUserName">Username:</label><input id="txtUserName" name="txtUserName" type="text" />
+</div>
+<div id="imgPhoto"> </div>
+
+<div>
+  <button type="submit">Upload Photo</button>
+</div>
+
+<div>
+  <label for="txtDescription">Description:</label><textarea id="txtDescription" name="txtDescription"></textarea>
+</div>
+
+<div>
+  <button type="submit">Submit</button>
+</div>
+
+</form>
+
+</div>
+
+<%- include footer %>
