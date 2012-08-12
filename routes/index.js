@@ -63,11 +63,17 @@ exports.contact = function(req, res) {
 
 exports.userPage = function(req, res) {
     
-    var reqUserName = req.body.txtUserName;
-    var reqPassword = req.body.txtPassword;
+    
 
-    db.models.User.findOne({username: reqUserName,
-			   password: reqPassword}, function(err, user){ 
+    var email = req.body.txtEmailQuickLogin;
+    var passwd = req.body.txtPasswordQuickLogin;
+    
+    
+    console.log(req.user);
+    
+
+    db.models.User.findOne({email: email,
+			   password: passwd}, function(err, user){ 
 					   
 					   if(err) {
 					       console.log(err);
@@ -76,13 +82,18 @@ exports.userPage = function(req, res) {
 					   }
 
 					   if(user) {
+					       
 					       res.render('userpage', {title: 'Profile - Artisense', errors: [],
 								      userName: user.username,
 								      firstName: user.name.first,
 								      lastName: user.name.last,
-								      biography: user.biography});
+								      biography: user.biography,
+								      scripts: [],
+								      loggedIn: true});
 					   } else {
-					       res.render('login', {title: 'Login - Artisense', errors: ['Username/Password invalid']});
+					       res.render('login', {title: 'Login - Artisense',
+								    errors: ['Username/Password invalid'],
+								   scripts: []});
 					   }
 				});
 };
